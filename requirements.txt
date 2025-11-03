@@ -1,0 +1,27 @@
+# cellpose environment
+conda create --name cellpose python=3.10
+conda activate cellpose
+pip install cellpose[gui]
+pip install notebook
+pip install matplotlib
+
+# omnipose environment
+conda create --name omnipose python=3.10 pytorch (si GPU, ajouter torchvision pytorch-cuda=11.8 -c pytorch -c nvidia)
+conda activate omnipose
+pip install omnipose
+
+# QuPath v0.6 + cellpose installation
+Install QuPath v0.6
+Add extension catalog QuPath-BIOP (in QuPath > Extensions > Manage extensions, add https://github.com/BIOP/qupath-biop-catalog)
+Install Cellpose extension from the extension manager in QuPath
+Add the PATH variable (Python.exe location in cellpose/omnipose conda environments) in QuPath > Edit > Preferences > Cellpose/omnipose
+	to get the PATH variable:
+		conda activate cellpose # (or omnipose)
+		where python
+
+# coexpression environment (for data analysis)
+conda create -n coexpression python=3.12
+pip install pandas=2.3.3
+pip install matplotlib=3.10.7
+pip install seaborn=0.13.2
+pip install notebook=7.4.7
