@@ -21,7 +21,8 @@ Add the PATH variable (Python.exe location in cellpose/omnipose conda environmen
 
 # coexpression environment (for data analysis)
 conda create -n coexpression python=3.12
-pip install pandas=2.3.3
-pip install matplotlib=3.10.7
-pip install seaborn=0.13.2
-pip install notebook=7.4.7
+pip install pandas==2.3.3
+pip install matplotlib==3.10.7
+pip install seaborn==0.13.2
+pip install notebook==7.4.7
+pip install matplotlib-venn==1.1.2
