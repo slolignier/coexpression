@@ -20,7 +20,7 @@
 // Specify the model name (cyto, nuclei, cyto2, ... or a path to your custom model as a string)
 // Other models for Cellpose https://cellpose.readthedocs.io/en/latest/models.html
 // And for Omnipose: https://omnipose.readthedocs.io/models.html
-def pathModel = 'cyto3'
+def pathModel = 'cpsam'
 def cellpose = Cellpose2D.builder( pathModel )
         .pixelSize( 0.5 )                      // Resolution for detection in um
         .channels( 'Channel 3', 'Channel 4' )	               // Select detection channel(s)
@@ -42,10 +42,13 @@ def cellpose = Cellpose2D.builder( pathModel )
 //        .classify( "My Detections" )       // PathClass to give newly created objects
 //        .measureShape()                    // Add shape measurements
 //        .measureIntensity()                // Add cell measurements (in all compartments)
-//        .createAnnotations()               // Make annotations instead of detections. This ignores cellExpansion
+          .createAnnotations()               // Make annotations instead of detections. This ignores cellExpansion
 //        .simplify( 0 )                     // Simplification 1.6 by default, set to 0 to get the cellpose masks as precisely as possible
 //        .useGPU(false)                     // Force using CPU. Default useGPU(true)
         .build()
+
+// delete existing annotations
+clearAnnotations();
 
 // Create an annotation covering the whole image
 def imageData = getCurrentImageData()
