@@ -1,0 +1,11 @@
+data/**
+!data/**/.gitkeep
+
+temp/
+notes/
+
+# ignore temporary files
+__pycache__
+*.pyc
+.ipynb_checkpoints/
+.virtual_documents/

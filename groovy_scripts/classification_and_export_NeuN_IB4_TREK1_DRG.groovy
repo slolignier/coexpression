@@ -1,5 +1,5 @@
-// select annotations (run segmentation script before)
-selectAnnotations();
+// select detections
+selectDetections();
 
 // add intensity measurements (modify channels and features if needed)
 runPlugin('qupath.lib.algorithms.IntensityFeaturesPlugin', 
@@ -22,7 +22,7 @@ def outputDir = buildFilePath(PROJECT_BASE_DIR, "exports")
 
 // get image name and set export file name
 def imageName = GeneralTools.stripExtension(getCurrentImageName())
-def outputFile = buildFilePath(outputDir, imageName + "_annotations.csv")
+def outputFile = buildFilePath(outputDir, imageName + "_classification.csv")
 
-// save annotations
-saveAnnotationMeasurements(outputFile)
+// save detection measurements
+saveDetectionMeasurements(outputFile)

@@ -33,7 +33,7 @@ def cellpose = Cellpose2D.builder( pathModel )
 //        .flowThreshold( 0.4 )              // Threshold for the flows, defaults to 0.4
 //        .diameter( 15 )                    // Median object diameter. Set to 0.0 for the `bact_omni` model or for automatic computation
 //        .useOmnipose()                     // Use omnipose instead
-//        .useCellposeSAM()                  // Use cellposeSAM (i.e. cellpose 4.x.x) env instead of previous versions of cellpose <= v3.x.x
+          .useCellposeSAM()                  // Use cellposeSAM (i.e. cellpose 4.x.x) env instead of previous versions of cellpose <= v3.x.x
 //        .addParameter( "cluster" )         // Any parameter from cellpose or omnipose not available in the builder.
 //        .addParameter( "save_flows" )      // Any parameter from cellpose or omnipose not available in the builder.
 //        .addParameter( "anisotropy", "3" ) // Any parameter from cellpose or omnipose not available in the builder.
@@ -60,7 +60,7 @@ imageData.getHierarchy().addObject(annotation)
 // Detect cells
 cellpose.detectObjects(imageData, [annotation])
 
-// Delete annotation to keep only detections
+// Delete full image annotation to keep only cells
 imageData.getHierarchy().removeObject(annotation, true)
 
 println "Detection complete."
