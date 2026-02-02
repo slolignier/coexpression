@@ -5,8 +5,8 @@ selectDetections();
 runPlugin('qupath.lib.algorithms.IntensityFeaturesPlugin', 
     '{"pixelSizeMicrons":2.0, "region":"ROI", "tileSizeMicrons":25.0, ' +
     '"channel1":false, "channel2":true, "channel3":true, "channel4":true, ' +
-    '"doMean":true, "doStdDev":false, "doMinMax":false, "doMedian":false, ' +
-    '"doHaralick":false, "haralickMin":NaN, "haralickMax":NaN, ' +
+    '"doMean":true, "doStdDev":true, "doMinMax":true, "doMedian":true, ' +
+    '"doHaralick":true, "haralickMin":NaN, "haralickMax":NaN, ' +
     '"haralickDistance":1, "haralickBins":32}'
 )
     
